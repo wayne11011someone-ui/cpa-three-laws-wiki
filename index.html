@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="跟著暮光文具認識公司法、證券交易法和商業會計法。">
+  <title>跟著暮光文具學會計師三法</title>
+  <style>
+    :root { color-scheme: light; --ink: #172b25; --muted: #435d54; --paper: #fbfaf4; --panel: #f0f3e8; --border: #cfdacc; --accent: #24624e; --deep: #173b31; --gold: #f2d38d; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #e9eee5; color: var(--ink); font: 1.07rem/1.65 system-ui, 'PingFang TC', 'Noto Sans CJK TC', sans-serif; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: default; opacity: .5; }
+    :focus-visible { outline: 3px solid #9d5317; outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .shell { width: min(72rem, 100% - 2rem); margin-inline: auto; }
+    header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem 1.4rem; padding-block: 1.05rem; font-size: .94rem; }
+    header p { margin: 0; font-weight: 740; }
+    .slide { background: var(--paper); border: 1px solid var(--border); border-radius: 1rem; padding: clamp(1.2rem, 5.3vw, 4rem); min-height: 30rem; display: flex; flex-direction: column; gap: 1.12rem; }
+    .slide h1, .slide h2, .slide h3, .slide p { margin: 0; }
+    .slide h1, .slide h2 { font-family: 'Songti TC', 'Noto Serif CJK TC', Georgia, serif; line-height: 1.18; letter-spacing: -.05em; }
+    h1 { font-size: clamp(2.65rem, 7vw, 6.05rem); }
+    h2 { font-size: clamp(1.95rem, 4.8vw, 4.15rem); }
+    h3 { font-size: 1.16rem; }
+    .cover { background: var(--deep); color: #fffdf3; border-color: var(--deep); }
+    .cover h1 { max-width: 11ch; }
+    .cover .lede { color: #e4eee8; }
+    .part { color: var(--accent); font-size: .92rem; font-weight: 760; }
+    .cover .part { color: var(--gold); }
+    .lede { color: var(--muted); font-size: clamp(1.04rem, 2vw, 1.25rem); max-width: 55ch; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: .68rem; padding: 1rem; display: grid; gap: .25rem; align-content: start; }
+    .cover .card { background: #23483a; border-color: #4b6b5e; }
+    .cover .card p { color: #dbe9e1; }
+    .callout { padding: .85rem 1rem; background: #e1eddf; border-inline-start: 4px solid var(--accent); border-radius: .2rem .55rem .55rem .2rem; }
+    .source { margin-top: auto !important; padding-top: .7rem; border-top: 1px solid var(--border); font-size: .92rem; }
+    .cover .source { border-color: #4b6b5e; }
+    .cover .source a { color: var(--gold); }
+    ul, ol { margin: 0; padding-inline-start: 1.3rem; }
+    .answer { border: 1px solid var(--border); border-radius: .6rem; padding: .7rem .85rem; }
+    .answer summary { color: var(--accent); font-weight: 750; cursor: pointer; }
+    .answer[open] summary { margin-bottom: .5rem; }
+    .questions { align-self: start; min-width: min(100%, 39rem); display: grid; gap: .65rem; }
+    .questions label { display: grid; gap: .35rem .65rem; grid-template-columns: minmax(8rem, .7fr) minmax(0, 1.3fr); align-items: center; }
+    select { padding: .4rem .55rem; color: var(--ink); background: #fff; border: 1px solid #82978b; border-radius: .42rem; min-width: 0; max-width: 100%; }
+    .actions { display: flex; flex-wrap: wrap; gap: .55rem; }
+    .button { border: 1px solid var(--accent); color: var(--ink); background: #fff; border-radius: .55rem; padding: .45rem .85rem; font-weight: 700; }
+    .button.primary { color: white; background: var(--accent); }
+    .cover .button { border-color: var(--gold); background: var(--gold); color: var(--ink); align-self: flex-start; }
+    .feedback { min-height: 1.65em; }
+    .controls { margin: .75rem 0 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; }
+    .controls label { display: flex; gap: .5rem; align-items: center; }
+    .controls select { max-width: 16rem; }
+    #position { font-variant-numeric: tabular-nums; }
+    @media (max-width: 42rem) {
+      .shell { width: calc(100% - 1.2rem); }
+      .slide { min-height: auto; }
+      .grid, .grid.two { grid-template-columns: 1fr; }
+      .questions label { grid-template-columns: 1fr; }
+      .controls label { order: 3; width: 100%; }
+      .controls select { flex: 1; max-width: none; }
+    }
+    @media print {
+      header, .controls, .actions, .cover button { display: none !important; }
+      .slide, .slide[hidden] { display: flex !important; break-after: page; border: 0; background: white; color: black; min-height: 0; }
+      .cover .part, .cover .lede, .cover .card p, .cover .source a { color: var(--ink); }
+      .cover .card { background: white; border-color: var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <p>會計師三法入門</p>
+    <a href="INDEX.md">開啟 Wiki 首頁</a>
+  </header>
+  <main class="shell" id="deck">
+    <section class="slide cover" data-label="封面" aria-labelledby="slide-title-1">
+      <p class="part">暮光文具案例</p>
+      <h1 id="slide-title-1" tabindex="-1">跟著暮光文具<br>學會計師三法</h1>
+      <p class="lede">用同一家股份有限公司的三個情境，練習辨認題目要用哪一部法。</p>
+      <div class="grid">
+        <div class="card"><h3>公司法</h3><p>誰有權決定？</p></div>
+        <div class="card"><h3>證券交易法</h3><p>何時公告及申報？</p></div>
+        <div class="card"><h3>商業會計法</h3><p>買設備怎麼入帳？</p></div>
+      </div>
+      <button type="button" class="button" id="start" hidden>開始學習</button>
+      <p class="source"><a href="INDEX.md">會計師三法入門 Wiki</a></p>
+    </section>
+    <section class="slide" data-label="三個情境" aria-labelledby="slide-title-2">
+      <p class="part">學習路線</p>
+      <h2 id="slide-title-2" tabindex="-1">暮光文具遇到三個問題</h2>
+      <div class="grid">
+        <div class="card"><h3>想搬遷</h3><p>由董事會還是股東會決議？</p></div>
+        <div class="card"><h3>後來上市</h3><p>各類資訊的公告和申報期限怎麼看？</p></div>
+        <div class="card"><h3>買了一台設備</h3><p>拿到供應商的憑證後，怎麼登帳？</p></div>
+      </div>
+      <p class="source">對照 <a href="INDEX.md">Wiki 首頁</a>、<a href="sources/SRC-05-會計師考試命題大綱.md">SRC-05 命題大綱</a></p>
+    </section>
+    <section class="slide" data-label="公司搬遷" aria-labelledby="slide-title-3">
+      <p class="part">公司法</p>
+      <h2 id="slide-title-3" tabindex="-1">暮光文具想換營運據點</h2>
+      <p class="lede">本題假設這是公司的業務事項，公司法和公司章程都沒有規定這件事應由股東會決議。</p>
+      <div class="grid two">
+        <div class="card"><h3>A. 股東會</h3><p>由股東對這件事作成決議。</p></div>
+        <div class="card"><h3>B. 董事會</h3><p>由董事組成的董事會作成決議。</p></div>
+      </div>
+      <p class="callout">先選 A 或 B，再翻下一頁看答案。</p>
+      <p class="source">對照 <a href="topics/公司法-誰做決定.md">公司法主題筆記</a>、<a href="sources/SRC-01-公司法.md">SRC-01 第 202 條</a></p>
+    </section>
+    <section class="slide" data-label="誰有決議權" aria-labelledby="slide-title-4">
+      <p class="part">公司法解答</p>
+      <h2 id="slide-title-4" tabindex="-1">本題選 B，由董事會決議</h2>
+      <div class="grid two">
+        <div class="card"><h3>原則</h3><p>股份有限公司的業務執行，由董事會決議。</p></div>
+        <div class="card"><h3>例外</h3><p>公司法或公司章程規定應由股東會決議的事項，交由股東會決議。</p></div>
+      </div>
+      <p class="callout">本題已交代公司法和章程的條件，所以適用董事會決議的原則。</p>
+      <p class="source">對照 <a href="sources/SRC-01-公司法.md">SRC-01 公司法第 202 條</a></p>
+    </section>
+    <section class="slide" data-label="公告及申報期限" aria-labelledby="slide-title-5">
+      <p class="part">證券交易法</p>
+      <h2 id="slide-title-5" tabindex="-1">公司何時公告及申報？</h2>
+      <p class="lede">假設暮光文具後來上市，適用證券交易法第 36 條第 1 項的一般規定。</p>
+      <div class="grid">
+        <div class="card"><h3>年度財務報告</h3><p>會計年度結束後 <strong>3 個月內</strong></p></div>
+        <div class="card"><h3>第一、二、三季財務報告</h3><p>各季結束後 <strong>45 日內</strong></p></div>
+        <div class="card"><h3>上月營運情形</h3><p><strong>每月 10 日以前</strong></p></div>
+      </div>
+      <p class="callout">適用對象是已依證券交易法發行有價證券的公司。主管機關就特殊情形另有規定時，依該規定辦理。</p>
+      <p class="source">對照 <a href="sources/SRC-02-證券交易法.md">SRC-02 證券交易法第 36 條</a></p>
+    </section>
+    <section class="slide" data-label="期限配對題" aria-labelledby="slide-title-6">
+      <p class="part">證券交易法練習</p>
+      <h2 id="slide-title-6" tabindex="-1">把資訊配到正確的期限</h2>
+      <form class="questions" id="matching">
+        <label>年度財務報告 <select name="annual" required><option value="">請選擇</option><option value="monthly">每月 10 日以前</option><option value="annual">會計年度結束後 3 個月內</option><option value="quarter">各季結束後 45 日內</option></select></label>
+        <label>第三季財務報告 <select name="quarter" required><option value="">請選擇</option><option value="monthly">每月 10 日以前</option><option value="annual">會計年度結束後 3 個月內</option><option value="quarter">各季結束後 45 日內</option></select></label>
+        <label>上月營運情形 <select name="monthly" required><option value="">請選擇</option><option value="monthly">每月 10 日以前</option><option value="annual">會計年度結束後 3 個月內</option><option value="quarter">各季結束後 45 日內</option></select></label>
+        <div class="actions"><button class="button primary" type="submit">核對答案</button><button class="button" type="reset">重填</button></div>
+        <p class="feedback" id="matching-feedback" role="status"></p>
+      </form>
+      <p class="source">對照 <a href="topics/證券交易法-何時公告.md">證券交易法主題筆記</a></p>
+    </section>
+    <section class="slide" data-label="買設備的憑證" aria-labelledby="slide-title-7">
+      <p class="part">商業會計法</p>
+      <h2 id="slide-title-7" tabindex="-1">收到採購憑證，先看什麼？</h2>
+      <p class="lede">暮光文具買了一台設備。收到供應商開具的外來憑證後，可以先檢查這些資料。</p>
+      <ul class="callout">
+        <li>憑證名稱與日期</li>
+        <li>交易雙方名稱及地址或統一編號</li>
+        <li>交易內容與金額</li>
+        <li>開具人的簽名或蓋章</li>
+      </ul>
+      <p class="source">對照 <a href="sources/SRC-04-商業會計處理準則.md">SRC-04 商業會計處理準則第 5 條</a></p>
+    </section>
+    <section class="slide" data-label="憑證如何登帳" aria-labelledby="slide-title-8">
+      <p class="part">商業會計法</p>
+      <h2 id="slide-title-8" tabindex="-1">從原始憑證到會計帳簿</h2>
+      <div class="grid two">
+        <div class="card"><h3>一般流程</h3><p>根據原始憑證編製記帳憑證，再依記帳憑證登錄會計帳簿。</p></div>
+        <div class="card"><h3>可省去另製記帳憑證的情況</h3><p>會計事務較簡單，或原始憑證已符合記帳需要時，可以用原始憑證作為記帳憑證。</p></div>
+      </div>
+      <p class="callout">本例假設原始憑證已符合記帳需要。暮光文具可用它作為記帳憑證，接著登帳。</p>
+      <p class="source">對照 <a href="sources/SRC-03-商業會計法.md">SRC-03 商業會計法第 18 條</a></p>
+    </section>
+    <section class="slide" data-label="入帳練習題" aria-labelledby="slide-title-9">
+      <p class="part">商業會計法練習</p>
+      <h2 id="slide-title-9" tabindex="-1">這張發票可以直接作為記帳憑證嗎？</h2>
+      <p class="lede">題目已交代這張原始憑證符合記帳需要。想想哪一項條件影響你的判斷。</p>
+      <details class="answer"><summary>查看解析</summary><p>可以。符合《商業會計法》第 18 條第 2 項，暮光文具可用原始憑證作為記帳憑證，再登錄會計帳簿。</p></details>
+      <p class="source">對照 <a href="topics/商業會計法-憑證怎麼入帳.md">商業會計法主題筆記</a></p>
+    </section>
+    <section class="slide" data-label="三法總複習" aria-labelledby="slide-title-10">
+      <p class="part">總複習</p>
+      <h2 id="slide-title-10" tabindex="-1">看到這些關鍵字，先查哪一部法？</h2>
+      <div class="grid">
+        <div class="card"><h3>股東會、董事會</h3><p>公司決議權 → 公司法</p></div>
+        <div class="card"><h3>上市、公告及申報</h3><p>資訊揭露 → 證券交易法</p></div>
+        <div class="card"><h3>憑證、會計帳簿</h3><p>憑證入帳 → 商業會計法</p></div>
+      </div>
+      <p class="source"><a href="topics/公司法-誰做決定.md">公司法筆記</a>、<a href="topics/證券交易法-何時公告.md">證券交易法筆記</a>、<a href="topics/商業會計法-憑證怎麼入帳.md">商業會計法筆記</a></p>
+    </section>
+    <section class="slide" data-label="Wiki 閱讀入口" aria-labelledby="slide-title-11">
+      <p class="part">繼續練習</p>
+      <h2 id="slide-title-11" tabindex="-1">回 Wiki 找依據</h2>
+      <p class="lede">在各主題筆記，可以重讀情境，並從筆記最後的來源連結找到法條。</p>
+      <div class="grid">
+        <div class="card"><h3><a href="topics/公司法-誰做決定.md">誰做決定？</a></h3><p>用公司搬遷案例複習原則與例外。</p></div>
+        <div class="card"><h3><a href="topics/證券交易法-何時公告.md">何時公告？</a></h3><p>再做一次三種揭露資訊的配對題。</p></div>
+        <div class="card"><h3><a href="topics/商業會計法-憑證怎麼入帳.md">憑證怎麼入帳？</a></h3><p>找出設備採購案例適用的條件。</p></div>
+      </div>
+      <p class="source"><a href="INDEX.md">回 Wiki 首頁</a></p>
+    </section>
+    <section class="slide" data-label="五份官方來源" aria-labelledby="slide-title-12">
+      <p class="part">參考資料</p>
+      <h2 id="slide-title-12" tabindex="-1">五份官方來源</h2>
+      <ol>
+        <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=202&amp;pcode=J0080001">公司法第 202 條</a> · <a href="sources/SRC-01-公司法.md">SRC-01 筆記</a></li>
+        <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=36&amp;pcode=G0400001">證券交易法第 36 條</a> · <a href="sources/SRC-02-證券交易法.md">SRC-02 筆記</a></li>
+        <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=18&amp;pcode=J0080009">商業會計法第 18 條</a> · <a href="sources/SRC-03-商業會計法.md">SRC-03 筆記</a></li>
+        <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=5&amp;pcode=J0080010">商業會計處理準則第 5 條</a> · <a href="sources/SRC-04-商業會計處理準則.md">SRC-04 筆記</a></li>
+        <li><a href="https://wwwc.moex.gov.tw/main/content/wHandMenuFile.ashx?file_id=1846">考選部會計師考試命題大綱</a> · <a href="sources/SRC-05-會計師考試命題大綱.md">SRC-05 筆記</a></li>
+      </ol>
+      <p class="source"><a href="INDEX.md">回 Wiki 首頁</a></p>
+    </section>
+    <nav class="controls" id="controls" aria-label="簡報翻頁" hidden>
+      <button class="button" type="button" id="prev">上一頁</button>
+      <span id="position" aria-live="polite"></span>
+      <label>跳到 <select id="jump"></select></label>
+      <button class="button primary" type="button" id="next">下一頁</button>
+    </nav>
+  </main>
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const previous = document.querySelector('#prev');
+    const next = document.querySelector('#next');
+    const jump = document.querySelector('#jump');
+    const position = document.querySelector('#position');
+    const start = document.querySelector('#start');
+    let current = 0;
+
+    for (const [index, slide] of slides.entries()) {
+      const label = (index + 1) + '．' + slide.dataset.label;
+      jump.add(new Option(label, String(index)));
+    }
+
+    function showSlide(index, focusHeading = true) {
+      if (index < 0 || index >= slides.length) return;
+
+      current = index;
+      slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== current; });
+      previous.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      jump.value = String(current);
+      position.textContent = (current + 1) + ' / ' + slides.length;
+
+      if (focusHeading) {
+        slides[current].querySelector('h1, h2').focus({ preventScroll: true });
+        window.scrollTo(0, 0);
+      }
+    }
+
+    start.addEventListener('click', () => showSlide(1));
+    previous.addEventListener('click', () => showSlide(current - 1));
+    next.addEventListener('click', () => showSlide(current + 1));
+    jump.addEventListener('change', () => showSlide(Number(jump.value)));
+    document.addEventListener('keydown', event => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.target.closest('select, button, a, summary')) return;
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        showSlide(current + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+
+    const matching = document.querySelector('#matching');
+    const answers = Array.from(matching.querySelectorAll('select'));
+    const feedback = document.querySelector('#matching-feedback');
+
+    matching.addEventListener('submit', event => {
+      event.preventDefault();
+      const correct = answers.filter(answer => answer.name === answer.value).length;
+      feedback.textContent = '答對 ' + correct + ' / ' + answers.length + ' 題。'
+        + (correct === answers.length ? ' 三種資訊的期限都配對正確。' : ' 可以回第 5 頁核對三種期限，再試一次。');
+    });
+    matching.addEventListener('reset', () => { feedback.textContent = ''; });
+
+    document.querySelector('#controls').hidden = false;
+    start.hidden = false;
+    showSlide(0, false);
+  </script>
+</body>
+</html>
